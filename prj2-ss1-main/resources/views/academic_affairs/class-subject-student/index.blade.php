@@ -13,7 +13,6 @@
                     <th>Mã sinh viên</th>
                     <th>Tên lớp môn học</th>
                     <th>Lần thi</th>
-                    {{-- <th>Hành động</th> --}}
                 </tr>
                 </thead>
                 <tbody>

@@ -58,18 +58,7 @@
                             @endphp
                                 {{ $asmGrade }}
                             </td>
-
-{{--                            @php--}}
-{{--                                $result = '';--}}
-{{--                                if (($point->theory >= 5 && $point->practice == null && $point->asm == null) || ($point->practice >= 5 && $point->theory == null && $point->asm == null) || ($point->asm >= 5 && $point->theory == null && $point->practice == null) || ($point->theory >= 5 && $point->practice >= 5 && $point->asm == null)) {--}}
-{{--                                    $result = 1;--}}
-{{--                                } elseif ($point->theory < 5 || $point->practice < 5 || $point->asm < 5) {--}}
-{{--                                    $result = 0;--}}
-{{--                                }--}}
-{{--                                $point->result = $result;--}}
-{{--                            @endphp--}}
                             <td>
-{{--                                {{ $point->result == 1 ? 'Qua môn' : 'Trượt' }}--}}
                                 @if ($point->exam_times == 1)
                                     {{ $point->result == 1 ? 'Qua môn' : 'Thi lần 2' }}
                                 @elseif ($point->exam_times == 2)
@@ -108,7 +97,6 @@
                 data[fieldName] = fieldValue;
             });
 
-            // Gửi dữ liệu đến phía server
             fetch('/save-point-data', {
                     method: 'POST',
                     headers: {

@@ -101,11 +101,9 @@ class PointController extends Controller
             ]);
         if($result){
             flash()->addSuccess('Thêm thành công!');
-            // return redirect()->route('aa-point-point');
             return redirect()->back();
         }else {
             flash()->addError('Thêm thất bại!');
-//            return redirect()->route('aa-point-point');
         }
     }
 

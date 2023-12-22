@@ -18,7 +18,6 @@ class CSSController extends Controller{
             ->join('subjects', 'class_subjects.subject_id', '=', 'subjects.subject_id')
             ->join('majors', 'subjects.major_id', '=', 'majors.major_id' )
             ->select('users.name as name','users.student_code as student_code','class_subject_students.*', 'class_subjects.*' , 'classes.*', 'subjects.*', 'majors.*')
-
             ->paginate(10);
         $majors = DB::table('majors')->get();
         $users = DB::table('users')
@@ -44,20 +43,6 @@ class CSSController extends Controller{
     function createCSS(Request $request){
         $name = $request->input('name');
         $subject_name = $request->input('subject_name');
-//        $validator = Validator::make($request->all(), [
-//            'name' => [
-//                'required',
-//                Rule::unique('class_subject_students', 'id'),
-//            ],
-//            'subject_name' => [
-//                'required',
-//                Rule::unique('class_subject_students', 'cs_id'),
-//            ],
-//        ]);
-//        if ($validator->fails()) {
-//            flash()->addError('CSS đã được thêm!');
-//            return redirect()->back()->withErrors($validator)->withInput();
-//        }
         $result = DB::table('class_subject_students')
             ->join('users', 'class_subject_students.id', '=', 'users.id')
             ->join('class_subjects', 'class_subject_students.cs_id', '=', 'class_subjects.cs_id')

@@ -154,20 +154,6 @@ class ClassSubjectController extends Controller
     {
         $class_name = $request->input('class_name');
         $subject_name = $request->input('subject_name');
-//        $validator = Validator::make($request->all(), [
-//            'class_name' => [
-//                'required',
-//                Rule::unique('class_subjects', 'class_id'),
-//            ],
-//            'subject_name' => [
-//                'required',
-//                Rule::unique('class_subjects', 'subject_id'),
-//            ],
-//        ]);
-//        if ($validator->fails()) {
-//            flash()->addError('Lớp môn học đã được thêm!');
-//            return redirect()->back()->withErrors($validator)->withInput();
-//        }
         $result = DB::table('class_subjects')
             ->join('classes', 'class_subjects.class_id', '=', 'classes.class_id')
             ->join('subjects', 'class_subjects.subject_id', '=', 'subjects.subject_id')
