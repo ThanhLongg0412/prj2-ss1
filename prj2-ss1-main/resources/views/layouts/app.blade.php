@@ -20,9 +20,6 @@
             <div class="logo">
                 <p class="logo__text"><h5>Quản lý điểm sinh viên</h5></p>
             </div>
-{{--             <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">--}}
-{{--            <use xlink:href="{{ asset('icons/brand.svg#signet') }}"></use>--}}
-{{--        </svg>--}}
         </div>
         @include('layouts.navigation')
         <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
